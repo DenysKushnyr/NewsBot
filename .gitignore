@@ -2,5 +2,5 @@ node_modules/
 build/
 .vscode
 .env
-logs.txt
+LOGS.txt
 chat_id.txt
