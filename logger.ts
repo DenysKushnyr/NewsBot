@@ -1,6 +1,6 @@
 import pino from "pino";
 
-let destination: string = process.env.NODE_ENV === "production" ? "~/NewsBot/logs.txt" : "logs.txt";
+let destination: string = process.env.NODE_ENV === "production" ? "~/Logs/NewsBot/logs.txt" : "logs.txt";
 
 const targets = [
     {
