@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "production") {
         {
             target: "pino-pretty",
             options: {
-                destination: "~/NewsBot/logs.txt",
+                destination: "~/Logs/NewsBot/logs.txt",
             }
         },
     ]
