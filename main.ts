@@ -11,6 +11,7 @@ const bot: TelegramBot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 const URL = "https://svtv.org/online/";
 const CHAT_ID_FILENAME = "chat_id.txt";
+const TIMEZONE = "Europe/Kiev";
 
 let CHAT_ID: number = -1;
 let NEWS = "";
@@ -110,6 +111,8 @@ cron.schedule('0 0-9 * * *', async () => {
     } else {
         logger.info("Finding news was skipped, because the previous one weren't be sent");
     }
+}, {
+    timezone: TIMEZONE
 });
 
 
@@ -133,4 +136,6 @@ cron.schedule('30 22 * * *', async () => {
         logger.error("No CHAT_ID was found!");
     }
 
+}, {
+    timezone: TIMEZONE
 })
