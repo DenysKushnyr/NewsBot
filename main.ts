@@ -97,7 +97,7 @@ async function findNews() {
         })
 
         NEWS = newsResponse.join("\n\n");
-        logger.info("The news has found been and saved");
+        logger.info("The news has been found and saved");
     } catch (err) {
         logger.error(err, "An error was found!");
     }
