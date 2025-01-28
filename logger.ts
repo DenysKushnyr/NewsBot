@@ -1,5 +1,6 @@
 import pino from "pino";
 
+const DESTINATION = "LOGS.txt";
 let targets;
 
 if (process.env.NODE_ENV === "production") {
@@ -7,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
         {
             target: "pino-pretty",
             options: {
-                destination: "~/Logs/NewsBot/logs.txt",
+                destination: DESTINATION,
             }
         },
     ]
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
         {
             target: "pino-pretty",
             options: {
-                destination: "logs.txt",
+                destination: DESTINATION,
             }
         },
         {
