@@ -1,18 +1,29 @@
 import pino from "pino";
 
-let destination: string = process.env.NODE_ENV === "production" ? "~/Logs/NewsBot/logs.txt" : "logs.txt";
+let targets;
 
-const targets = [
-    {
-        target: "pino-pretty",
-        options: {
-            destination,
+if (process.env.NODE_ENV === "production") {
+    targets = [
+        {
+            target: "pino-pretty",
+            options: {
+                destination: "~/NewsBot/logs.txt",
+            }
+        },
+    ]
+} else {
+    targets = [
+        {
+            target: "pino-pretty",
+            options: {
+                destination: "logs.txt",
+            }
+        },
+        {
+            target: "pino-pretty",
         }
-    },
-    {
-        target: "pino-pretty",
-    }
-];
+    ]
+}
 
 
 const logger = pino({
