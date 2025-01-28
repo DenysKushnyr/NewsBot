@@ -1,0 +1,6 @@
+node_modules/
+build/
+.vscode
+.env
+logs.txt
+chat_id.txt
